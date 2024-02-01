@@ -3,6 +3,7 @@ const terserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: './src/index.js',
@@ -75,6 +76,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'my webpack project',
             template: 'src/index.hbs'
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: 'src/output3.js', to: "" },
+            ],
         })
     ]
 }
