@@ -1,6 +1,6 @@
 import Heading from './components/heading/heading';
 import HelloWorldButton from './components/hello-world-button/hello-world-button';
-import output from './output';
+import output from './output.js';
 
 
 const helloWorldButton = new HelloWorldButton();

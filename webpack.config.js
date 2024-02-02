@@ -54,7 +54,11 @@ module.exports = {
                 use: [
                     'handlebars-loader'
                 ]
-            }
+            },
+            // {
+            //     test: /output\.js$/,
+            //     use: 'ignore-loader'
+            // }
         ],
     },
     resolve: {
@@ -62,10 +66,10 @@ module.exports = {
         //     [path.resolve(__dirname, "src/altText.txt")]:
         //         path.resolve(__dirname, "src/altText2.txt")
         // },
-        alias: {
-            [path.resolve(__dirname, "src/output.js")]:
-                path.resolve(__dirname, "src/output3.js")
-        }
+        // alias: {
+        //     [path.resolve(__dirname, "src/output.js")]:
+        //         path.resolve(__dirname, "src/output3.js")
+        // }
     },
     plugins: [
         new terserPlugin(),
@@ -79,7 +83,7 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: 'src/output3.js', to: "" },
+                { from: 'src/output.js', to: "" },
             ],
         })
     ]
